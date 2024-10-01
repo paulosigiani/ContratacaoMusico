@@ -1,0 +1,18 @@
+{
+    "musico": {
+        "nome": "Paulo",
+        "idade": 27,
+        "cpf": "999.999.999.00",
+        "sexo": "M",
+        "salario": 777.77,
+        "cep": "37070140"
+    },
+    "salario": 777.77,
+    "tipoContrato": "CLT",
+    "instrumento": {
+        "nome": "Regua",
+        "codigo": 170,
+        "tipoInstrumento": "Percussao",
+        "idMusico": 27
+    }
+}

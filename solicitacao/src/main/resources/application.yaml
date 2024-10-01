@@ -1,0 +1,28 @@
+spring:
+    application:
+        name: solicitacao-service
+    main:
+        allow-bean-definition-overriding: true
+    datasource:
+        url: jdbc:h2:mem:solicitacao
+        username: sa
+        password:
+        driver-class-name: org.h2.Driver
+    h2:
+        console:
+            enabled: true
+    jpa:
+        show-sql: false
+        database-platform: org.hibernate.dialect.H2Dialect
+        defer-datasource-initialization: true
+app:
+    myport: ${PORT:0}
+server:
+    port: ${app.myport}
+eureka:
+    instance:
+        instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    client:
+        service-url:
+            deafaultZone: http://localhost:8761/eureka
+        fetch-registry: true #default

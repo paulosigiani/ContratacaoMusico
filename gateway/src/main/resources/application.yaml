@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: instrumento
+          uri: lb://INSTRUMENTO-SERVICE
+          predicates:
+            - Path=/instrumento/**
+          filters:
+            - StripPrefix=1
+        - id: contratacao
+          uri: lb://CONTRATACAO-SERVICE
+          predicates:
+            - Path=/contratacao/**
+          filters:
+            - StripPrefix=1
+        - id: musico
+          uri: lb://MUSICO-SERVICE
+          predicates:
+            - Path=/musico/**
+          filters:
+            - StripPrefix=1
+        - id: solicitacao
+          uri: lb://SOLICITACAO-SERVICE
+          predicates:
+            - Path=/solicitacao/**
+          filters:
+            - StripPrefix=1
+server:
+  port: 9999
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
